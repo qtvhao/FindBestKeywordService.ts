@@ -99,7 +99,7 @@ export class FindBestKeywordService {
                     return reject(result);
                 }
                 const jobData = result.data;
-                console.log(`🔄 Polling job [${jobId}] status: ${jobData.status}`);
+                console.log(`🔄 Checking status of keyword job [${jobId}] to see if it has completed... Current status: "${jobData.status}"`);
                 if (jobData.status === 'completed') {
                     return resolve(jobData.result);
                 }
