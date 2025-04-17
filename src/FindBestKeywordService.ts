@@ -166,8 +166,8 @@ export class FindBestKeywordService {
 
       return await this.pollFindBestKeywordJob(jobId, interval, timeout);
     } catch (error: any) {
-      console.error('❌ Error running find-best-keyword job:', error.message || error);
-      throw new Error(error.message || 'Unknown error occurred while running the job.');
+      console.error('❌ Error running find-best-keyword job:', error.message, error);
+      throw error;
     }
   }
 }
